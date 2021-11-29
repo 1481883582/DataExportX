@@ -1,0 +1,111 @@
+<idea-plugin>
+    <id>com.bx.DataExportX</id>
+    <name>DataExportX</name>
+    <vendor email="1481883582@qq.com" url="https://gitee.com/valuenull/data-export-x/tree/master/DataExportX">DataExportX</vendor>
+    <change-notes>
+        Add New Plugin
+    </change-notes>
+    <description>
+        <![CDATA[
+      <p>EN
+      <ul>
+        <li>Switch easily between kebab-case, SNAKE_CASE, PascalCase, camelCase, snake_case.</li>
+        <li>Copy <a href="https://mybatis.org/mybatis-3/">mybatis</a> log as executable sql, through console menu or common tools.</li>
+        <li>Some common tools for developer, like url encoder/decoder, md5, json format, mybatis log converter.</li>
+        <li>Copy <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html">springmvc</a> controller method full http path</li>
+        <li>Easily copy <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html">springmvc</a> controller method as api document, custom api template</li>
+        <li>Copy java method return type as <a href="https://json5.org/">json5</a></li>
+        <li>Export database MD document</li>
+        <li>Export magic data creation table MD file</li>
+      </ul>
+      <p>CN
+      <ul>
+        <li>变量命名切换在kebab-case, SNAKE_CASE, PascalCase, camelCase, snake_case之间切换</li>
+        <li>mybatis日志转可执行sql，可以通过console菜单或者工具window</li>
+        <li>一些常用的开发工具，如url编码/解码、md5加密、json格式化、mybatis日志转换</li>
+        <li>springmvc controller方法http全路径复制</li>
+        <li>复制springmvc controller方法为api文档，可以自定义api文档模版</li>
+        <li>复制java方法返回类型为json5</li>
+        <li>导出数据库MD文档</li>
+        <li>导出神通数据创建表MD文件</li>
+      </ul>
+      ]]>
+    </description>
+
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="171.3780.107"/>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <!--必须为企业版-->
+<!--    <depends>com.intellij.modules.lang</depends>-->
+    <!--必须依赖Database Tool插件-->
+    <depends>com.intellij.database</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->   <!-- Add your extensions here -->
+
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <!--DatabaseViewPopupMenu 是Database-->
+        <group id="data.export.action" class="com.bx.md.actions.MainActionGroup" text="DataExportX"
+               popup="true" icon="AllIcons.ToolbarDecorator.Export">
+            <!--生成代码菜单-->
+            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
+        </group>
+
+
+
+
+        <!--驼峰命名切换-->
+        <action id="com.bx.change.camel.ToggleCamelCase"
+                class="com.bx.change.camel.ToggleCamelCase"
+                text="Toggle Camel Case"
+                description="Switches between CamelCase, camelCase, snake_case and SNAKE_CASE">
+            <add-to-group group-id="EditSmartGroup" anchor="after" relative-to-action="EditorToggleCase"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift alt u"/>
+        </action>
+
+        <!--日志转换为可执行sql-->
+        <action id="com.bx.change.mybatis.MybatisLog2SqlAction"
+                class="com.bx.change.mybatis.MybatisLog2SqlAction"
+                text="Copy As Executable Sql"
+                description="Convert log to executable sql">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="before" relative-to-action="ConsoleView.ClearAll"/>
+        </action>
+
+        <action id="com.bx.change.tool.CopyReturnTypeAction"
+                class="com.bx.change.tool.CopyReturnTypeAction"
+                text="Copy Method Return Type Json5">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$Paste"/>
+        </action>
+        <action id="com.bx.change.tool.CopyMethodPathAction"
+                class="com.bx.change.tool.CopyMethodPathAction"
+                text="Copy Method Rest Path">
+            <add-to-group group-id="EditorPopupMenu" anchor="after"
+                          relative-to-action="com.bx.change.tool.CopyMethodPathAction"/>
+        </action>
+<!--        <action id="com.bx.change.po.CopyMethodApiDocAction"-->
+<!--                class="com.bx.change.po.CopyMethodApiDocAction"-->
+<!--                text="Copy Method Api Doc">-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="after"-->
+<!--                          relative-to-action="com.bx.change.po.CopyMethodApiDocAction"/>-->
+<!--        </action>-->
+
+    </actions>
+
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="PTools" anchor="right" icon="/icon/icon.svg"
+                    factoryClass="com.bx.change.tool.TextHandlerToolWindow"/>
+        <applicationService serviceImplementation="com.bx.change.po.ApiDocStateComponent"/>
+<!--        <applicationConfigurable instance="com.bx.change.po.ApiDocConfigurable"/>-->
+    </extensions>
+</idea-plugin>
