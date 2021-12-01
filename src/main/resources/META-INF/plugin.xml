@@ -1,9 +1,11 @@
 <idea-plugin>
     <id>com.bx.DataExportX</id>
     <name>DataExportX</name>
-    <vendor email="1481883582@qq.com" url="https://gitee.com/valuenull/data-export-x/tree/master/DataExportX">DataExportX</vendor>
+    <vendor email="1481883582@qq.com" url="https://github.com/1481883582/DataExportX">DataExportX</vendor>
     <change-notes>
-        Add New Plugin
+        <![CDATA[
+            <p>Add New Plugin</p>
+        ]]>
     </change-notes>
     <description>
         <![CDATA[

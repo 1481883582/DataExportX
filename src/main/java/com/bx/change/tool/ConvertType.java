@@ -1,5 +1,7 @@
 package com.bx.change.tool;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.bx.change.mybatis.LogParser;
 import com.bx.change.mybatis.SqlFormatter;
 import com.google.gson.*;
@@ -37,10 +39,9 @@ enum ConvertType {
         void handle(RSyntaxTextArea input, RSyntaxTextArea output) {
             try {
                 // 可以同时解析数组或者Object
-                JsonParser parser = new JsonParser();
-                JsonElement element = parser.parse(input.getText());
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                output.setText(gson.toJson(element));
+                JSONObject jsonObject = JSONObject.parseObject(input.getText());
+                output.setText(JSONObject.toJSONString(jsonObject, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue,
+                        SerializerFeature.WriteDateUseDateFormat));
                 // 格式化成功后定位到第一行
                 output.setCaretPosition(0);
             } catch (JsonSyntaxException ex) {
