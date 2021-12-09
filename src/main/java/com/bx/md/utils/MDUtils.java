@@ -416,7 +416,7 @@ public class MDUtils {
                     fileWriter.write("--Indexes DDL");
                     writeLineSeparator(fileWriter, 1);
 
-                    fileWriter.write("--这玩意老保存，给注释掉了，需要就打开，是创建索引的,错误原因：重复创建索引");
+                    fileWriter.write("--这玩意老报错，给注释掉了，需要就打开，是创建索引的,错误原因：重复创建索引");
                     writeLineSeparator(fileWriter, 1);
                     //拼接最后一句话 之后
                     StringBuilder afterSB = new StringBuilder();

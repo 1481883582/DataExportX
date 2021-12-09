@@ -2,11 +2,6 @@
     <id>com.bx.DataExportX</id>
     <name>DataExportX</name>
     <vendor email="1481883582@qq.com" url="https://github.com/1481883582/DataExportX">DataExportX</vendor>
-    <change-notes>
-        <![CDATA[
-            <p>Add New Plugin</p>
-        ]]>
-    </change-notes>
     <description>
         <![CDATA[
       <p>EN
@@ -33,6 +28,33 @@
       </ul>
       ]]>
     </description>
+
+    <change-notes>
+        <![CDATA[
+      <p>EN
+      <ul>
+        <li>Switch easily between kebab-case, SNAKE_CASE, PascalCase, camelCase, snake_case.</li>
+        <li>Copy <a href="https://mybatis.org/mybatis-3/">mybatis</a> log as executable sql, through console menu or common tools.</li>
+        <li>Some common tools for developer, like url encoder/decoder, md5, json format, mybatis log converter.</li>
+        <li>Copy <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html">springmvc</a> controller method full http path</li>
+        <li>Easily copy <a href="https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html">springmvc</a> controller method as api document, custom api template</li>
+        <li>Copy java method return type as <a href="https://json5.org/">json5</a></li>
+        <li>Export database MD document</li>
+        <li>Export magic data creation table MD file</li>
+      </ul>
+      <p>CN
+      <ul>
+        <li>变量命名切换在kebab-case, SNAKE_CASE, PascalCase, camelCase, snake_case之间切换</li>
+        <li>mybatis日志转可执行sql，可以通过console菜单或者工具window</li>
+        <li>一些常用的开发工具，如url编码/解码、md5加密、json格式化、mybatis日志转换</li>
+        <li>springmvc controller方法http全路径复制</li>
+        <li>复制springmvc controller方法为api文档，可以自定义api文档模版</li>
+        <li>复制java方法返回类型为json5</li>
+        <li>导出数据库MD文档</li>
+        <li>导出神通数据创建表MD文件</li>
+      </ul>
+      ]]>
+    </change-notes>
 
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
