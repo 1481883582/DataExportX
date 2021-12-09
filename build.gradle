@@ -70,7 +70,7 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     pluginName = 'DataExportX'
-    version = '2017.3'
+    version = '2017.3.7'
     // 社区版
 //    type 'IC'
     // 企业版
