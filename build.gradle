@@ -1,5 +1,12 @@
 buildscript {
     repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring/'
+        }
+        mavenLocal()
         google()
         mavenCentral()  //注意下这个顺序，放在jcenter()上面
         jcenter()
@@ -70,7 +77,7 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     pluginName = 'DataExportX'
-    version = '2017.3.7'
+    version = '2017.3'
     // 社区版
 //    type 'IC'
     // 企业版
